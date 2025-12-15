@@ -1,26 +1,21 @@
 # ITNE352 Project – Group 4
 
 ## Project Title
-**News Client-Server System using Python**
+**News Service System – Client/Server Project using Python**
 
 ---
 
 ## Project Description
-This project is a Python-based client-server system that allows multiple clients to retrieve news information from **NewsAPI.org**.  
-The system demonstrates:
+A Python-based client-server system that allows multiple clients to retrieve news information from **NewsAPI.org**.  
 
+Features:
 - Client-server architecture
 - TCP network communication
-- Multithreading to handle multiple clients simultaneously
+- Multithreading for multiple simultaneous clients
 - Fetching and parsing JSON data from an online API
-- Organized and readable code structure
+- Organized and readable code
 
-The server handles multiple clients and stores news data in JSON files for testing and evaluation. Clients can search for headlines and sources and view details of selected items.
-
----
-
-## Semester
-ITNE352 – Fall 2025
+The server stores news data in JSON files. Clients can search for headlines and sources and view detailed information.
 
 ---
 
@@ -33,24 +28,21 @@ ITNE352 – Fall 2025
 ---
 
 ## Table of Contents
-1. [Requirements](#requirements)  
-2. [Setup Instructions](#setup-instructions)  
-3. [How to Run](#how-to-run)  
-4. [Scripts](#scripts)  
-5. [Additional Concepts](#additional-concepts)  
-6. [Acknowledgments](#acknowledgments)  
-7. [Conclusion](#conclusion)  
+1. Requirements  
+2. Setup Instructions  
+3. How to Run  
+4. Scripts  
+5. Additional Concepts  
+6. Acknowledgments  
+7. Conclusion  
 
 ---
 
 ## Requirements
-To run this project locally, you need:
+- Python 3.8 or higher  
+- `requests` library  
 
-- Python 3.8 or higher
-- `requests` library for API calls
-
-Install dependencies using:
-
+Install dependencies:
 ```bash
 pip install requests
 Setup Instructions
@@ -64,98 +56,87 @@ Navigate to the project folder:
 bash
 Copy code
 cd ITNE352-Project-Group-4
-Ensure you have a folder named data (the server will create it automatically if missing) to store JSON files.
+Ensure there is a folder named data (the server will create it automatically if missing).
 
-Obtain a valid NewsAPI.org API Key and update the API_KEY variable in server.py.
+Obtain a valid NewsAPI.org API Key and update API_KEY in server.py.
 
 How to Run
 Start the Server
+
 bash
 Copy code
 python server.py
-The server will listen on port 9000 and wait for client connections.
+Listens on port 9000
 
-It handles multiple clients simultaneously using threads.
+Handles multiple clients using threads
 
 Run the Client
+
 bash
 Copy code
 python client.py
-Enter your name to register with the server.
+Enter your name to register
 
-Navigate menus to search headlines or sources:
+Navigate menus to search headlines or sources
 
-Search by keyword, category, country, or list all.
+View details of selected items
 
-View details of any selected news or source.
+Quit to disconnect
 
-Quit to disconnect.
-
-Note: All data retrieved by the server is saved in data/ as JSON files with the format:
-
-text
-Copy code
+Note: All retrieved data is saved in data/ with the format:
 <client_name>_<option>_ITNE352-Group-4.json
+
 Scripts
 server.py
-Listens for client TCP connections.
+Listens for TCP connections
 
-Handles multiple clients using threads.
+Handles multiple clients with threads
 
-Fetches data from NewsAPI based on client requests.
+Fetches data from NewsAPI
 
-Saves JSON results in data/ folder.
+Saves JSON results in data/
 
-Displays connection info and request logs on server console.
+Logs connections and requests
 
-Main Functions:
+Main functions:
 
-fetch_news(endpoint, params) – Fetches API data.
+fetch_news(endpoint, params)
 
-handle_client(conn, addr) – Handles each client in a separate thread.
+handle_client(conn, addr)
 
-start_server() – Starts TCP server and waits for connections.
+start_server()
 
 client.py
-Connects to the server over TCP.
+Connects to server via TCP
 
-Displays interactive menus to search for headlines or sources.
+Displays interactive menus
 
-Sends requests to server and displays results.
+Sends requests and receives results
 
-Shows full details of selected items.
+Shows full details of selected items
 
 Menus:
 
-Main Menu: Search headlines, List of sources, Quit.
+Main Menu: Search headlines, List of sources, Quit
 
-Headlines Menu: Search by keywords, category, country, list all.
+Headlines Menu: Search by keywords, category, country, list all
 
-Sources Menu: Search by category, country, language, list all.
+Sources Menu: Search by category, country, language, list all
 
 Additional Concepts
-Multithreading: The server handles each client in a separate thread, allowing multiple clients to connect simultaneously.
-
-JSON Storage: All retrieved data is saved in JSON files in a dedicated folder for testing and evaluation.
-
-Error Handling: Invalid inputs and API errors are properly handled to prevent server crashes.
-
-Acknowledgments
-NewsAPI.org for providing free API access to news data.
-
-Python socket and requests libraries.
-
-University of Bahrain – ITNE352 course resources.
-
-Conclusion
-This project demonstrates a fully functional Python client-server system with:
-
-Network communication
-
-API integration
-
 Multithreading
 
-Organized code and proper documentation
+JSON storage for testing and evaluation
 
-Students gained practical experience in building a networked application and handling real-time data from online sources.
+Error handling for invalid inputs and API failures
+
+Acknowledgments
+NewsAPI.org
+
+Python socket and requests libraries
+
+University of Bahrain – ITNE352 course resources
+
+Conclusion
+This project demonstrates a fully functional Python client-server system with network communication, API integration, multithreading, organized code, and proper documentation.
+Students gained practical experience in building a networked application and handling real-time online data.
